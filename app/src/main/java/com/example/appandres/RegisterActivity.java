@@ -5,21 +5,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
-    TextView mTextViewRegister;
+import de.hdodenhof.circleimageview.CircleImageView;
 
+public class RegisterActivity extends AppCompatActivity {
+
+    CircleImageView mCircleImageView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
-        mTextViewRegister=findViewById(R.id.TextViewRegister);
-        mTextViewRegister.setOnClickListener(new View.OnClickListener() {
+        mCircleImageView=findViewById(R.id.back_arrow);
+        mCircleImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this,RegisterActivity.class);
+                Intent intent=new Intent(RegisterActivity.this,MainActivity.class);
                 startActivity(intent);
             }
         });
